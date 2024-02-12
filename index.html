@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titkos zenelejátszó</title>
+    <style>
+        /* CSS a stílusokhoz */
+        #password-field {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #lorem-text {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <p>Azzal az igével nyílok, ahol megszülettem</p>
+        <input type="password" id="password-field" placeholder="Jelszó">
+        <audio id="myAudio">
+            <source src="./The Nazarene.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <p id="lorem-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <script>
+        // JavaScript a funkcionalitáshoz
+        const passwordField = document.getElementById("password-field");
+        const loremText = document.getElementById("lorem-text");
+        const audio = document.getElementById("myAudio");
+
+        // Ellenőrizzük a jelszót, és ha megfelelő, megjelenítjük a Lorem Ipsum szöveget és elindítjuk a zenét
+        passwordField.addEventListener("keyup", function(event) {
+            if (event.key === "Enter" && (passwordField.value.toLowerCase() === "magic")) {
+                passwordField.style.display = "none";
+                loremText.style.display = "block";
+                audio.play();
+            }
+        });
+    </script>
+</body>
+</html>
