@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,24 +8,50 @@
     <style>
         /* CSS a stílusokhoz */
         #password-field {
-            display: block;
-            margin-bottom: 10px;
+            display: flex !important;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            margin-left: 80px;
+            padding: 10px;
+            border: none;
+            -webkit-box-shadow: 2px 10px 33px -14px rgba(174, 174, 174, 1);
+            -moz-box-shadow: 2px 10px 33px -14px rgba(174, 174, 174, 1);
+            box-shadow: 2px 10px 33px -14px rgba(174, 174, 174, 1);
+            font-size: 20px;
+            text-align: center;
+
         }
 
         #lorem-text {
+            margin: 10px 30px 10px 20px;
             display: none;
+            font-size: 22px;
+            padding: 2px;
+        }
+
+        .pLabel {
+            font-size: 30px;
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
         }
     </style>
 </head>
+
 <body>
     <div id="container">
-        <p>Azzal az igével nyílok, ahol megszülettem</p>
+        <p class="pLabel">Azzal az igével nyílok, ahol megszülettem</p>
         <input type="password" id="password-field" placeholder="Jelszó">
         <audio id="myAudio">
             <source src="./The Nazarene.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
-        <p id="lorem-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p id="lorem-text">Könnycsepp a szempilládon este : <br>én vagyok. <br>Én vagyok az a kíváncsi csillag, <br>mely
+            rád kacsingat <br>és rád ragyog. <br>A csók, a csókod, az is én vagyok. <br> Végigálmodom az álmodat, <br>
+            ölelésedben én epedek el, <br> csak én tudom minden kis titkodat. <br> <br> A kulcs vagyok, <br> mely szíved
+            rejtett zárjait kinyitja, <br> s a nyíl vagyok, amely sivítvaa <br> holttá sebzi vágyad madarát. <br> <br> A
+            dal vagyok, mely belőled zokog <br> holt mámorok tört ívén át az éjbe: <br>s én vagyok az a sápadtság, amit
+            <br> éjfél után, ha bálból jössz haza, <br> rád lehel a sarki lámpa fénye. <br> <br>Tarts még ki <br>s ha nehéz
+            , csak nézz fel ide <br>Boldog Valentin Napot Édes Kis Titkom! </p>
     </div>
 
     <script>
@@ -34,7 +61,7 @@
         const audio = document.getElementById("myAudio");
 
         // Ellenőrizzük a jelszót, és ha megfelelő, megjelenítjük a Lorem Ipsum szöveget és elindítjuk a zenét
-        passwordField.addEventListener("keyup", function(event) {
+        passwordField.addEventListener("keyup", function (event) {
             if (event.key === "Enter" && (passwordField.value.toLowerCase() === "magic")) {
                 passwordField.style.display = "none";
                 loremText.style.display = "block";
@@ -43,4 +70,5 @@
         });
     </script>
 </body>
+
 </html>
